@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\DateTimeFmt;
 use Database\Factories\StudentFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,13 +17,16 @@ use Illuminate\Support\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  *
+ * @property-read string $created_at_fmt
+ * @property-read string $updated_at_fmt
+ *
  * @property User $user
  *
  * @method static StudentFactory factory(int $count = null, array $state = [])
  */
 class Student extends Model
 {
-    use HasFactory;
+    use HasFactory, DateTimeFmt;
 
     protected $table = 'students';
 
@@ -36,6 +40,18 @@ class Student extends Model
     function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    // Casts
+
+    function getCreatedAtFmtAttribute(): string
+    {
+        return $this->datetimeFmt($this->created_at);
+    }
+
+    function getUpdatedAtFmtAttribute(): string
+    {
+        return $this->datetimeFmt($this->updated_at);
     }
 
     // Misc
