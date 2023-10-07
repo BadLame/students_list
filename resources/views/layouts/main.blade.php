@@ -11,13 +11,15 @@
   @yield('head-js')
 </head>
 <body>
-@section('header')@show
+@section('header')
+  <header style="padding: 2rem 0;"></header>
+@show
 
 <div class="container-fluid">
   @section('content')@show
 </div>
 
-@section('footer')@show
+@section('footer')<footer style="padding: 2rem 0;"></footer>@show
 
 @yield('js')
 </body>
