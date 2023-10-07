@@ -13,25 +13,25 @@
     @if($students->count())
       <table class="table table-bordered table-striped">
         <tr>
-          <th>ID</th>
-          <th>{{ __('Name') }}</th>
-          <th>{{ __('Surname') }}</th>
-          <th>{{ __('Created At') }}</th>
-          <th>{{ __('Updated At') }}</th>
+          <th class="text-center">ID</th>
+          <th class="text-center">{{ __('Name') }}</th>
+          <th class="text-center">{{ __('Surname') }}</th>
+          <th class="text-center">{{ __('Created At') }}</th>
+          <th class="text-center">{{ __('Updated At') }}</th>
         </tr>
           <?php /** @var App\Models\Student $student */ ?>
         @foreach($students as $student)
           <tr>
-            <td>{{ $student->id }}</td>
-            <td>{{ $student->name }}</td>
-            <td>{{ $student->surname }}</td>
-            <td>{{ $student->created_at }}</td>
-            <td>{{ $student->updated_at }}</td>
+            <td class="text-center">{{ $student->id }}</td>
+            <td class="text-center">{{ $student->name }}</td>
+            <td class="text-center">{{ $student->surname }}</td>
+            <td class="text-center">{{ $student->created_at_fmt }}</td>
+            <td class="text-center">{{ $student->updated_at_fmt }}</td>
           </tr>
         @endforeach
       </table>
     @else
-      <div class="align-content-center">
+      <div class="text-center">
         <h3>{{__('No students in the list')}}</h3>
       </div>
     @endif
