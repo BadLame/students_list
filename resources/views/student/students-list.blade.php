@@ -25,13 +25,13 @@
             <td class="text-center">{{ $student->id }}</td>
             <td class="text-center">{{ $student->name }}</td>
             <td class="text-center">{{ $student->surname }}</td>
-            <td class="text-center">{{ $student->created_at }}</td>
-            <td class="text-center">{{ $student->updated_at }}</td>
+            <td class="text-center">{{ $student->created_at_fmt }}</td>
+            <td class="text-center">{{ $student->updated_at_fmt }}</td>
           </tr>
         @endforeach
       </table>
     @else
-      <div class="align-content-center">
+      <div class="text-center">
         <h3>{{__('No students in the list')}}</h3>
       </div>
     @endif
