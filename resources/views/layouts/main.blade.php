@@ -19,7 +19,7 @@
   @section('content')@show
 </div>
 
-@section('footer')<footer style="padding: 2rem 0;"></footer>@show
+@section('footer')<footer style="padding: 1rem 0;"></footer>@show
 
 @yield('js')
 </body>
