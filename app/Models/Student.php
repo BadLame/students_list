@@ -17,6 +17,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  *
+ * @property-read string $full_name
  * @property-read string $created_at_fmt
  * @property-read string $updated_at_fmt
  *
@@ -43,6 +44,11 @@ class Student extends Model
     }
 
     // Casts
+
+    function getFullNameAttribute(): string
+    {
+        return "$this->name $this->surname";
+    }
 
     function getCreatedAtFmtAttribute(): string
     {

@@ -21,6 +21,7 @@ $nextPageUrl = $paginator->nextPageUrl();
           <th class="text-center">{{ __('Surname') }}</th>
           <th class="text-center">{{ __('Created At') }}</th>
           <th class="text-center">{{ __('Updated At') }}</th>
+          <th class="text-center"></th>
         </tr>
         <?php /** @var App\Models\Student $student */ ?>
         @foreach($students as $student)
@@ -30,6 +31,9 @@ $nextPageUrl = $paginator->nextPageUrl();
             <td class="text-center">{{ $student->surname }}</td>
             <td class="text-center">{{ $student->created_at_fmt }}</td>
             <td class="text-center">{{ $student->updated_at_fmt }}</td>
+            <td class="text-center">
+              <a href="{{ route('students.edit-show', ['student' => $student->id]) }}">{{ __('Edit') }}</a>
+            </td>
           </tr>
         @endforeach
       </table>

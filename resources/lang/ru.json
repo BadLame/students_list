@@ -1,10 +1,14 @@
 {
   "Created At": "Создан",
+  "Edit": "Редактировать",
+  "Enter name": "Введите имя",
+  "Enter surname": "Введите фамилию",
   "First": "В начало",
   "Last": "В конец",
   "Name": "Имя",
   "No students in the list": "Нет студентов",
   "Students": "Студенты",
+  "Submit": "Подтвердить",
   "Surname": "Фамилия",
   "Updated At": "Редактирован"
 }
